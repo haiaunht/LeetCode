@@ -75,6 +75,14 @@ class Solution {
         //                   f
         //[0,1,2,1,3,4,2,3,3,4], now nums[j] != nums[i] move i up => i=1 and override 1 at index i=1
         //           s
+	int slow = 0;
+        for (int fast=1; fast<nums.length; fast++) {
+            if (nums[fast] != nums[slow]) {
+                slow++; //move i up to the position will be replaced by nums[j]
+                nums[slow] = nums[fast];
+            }
+        }
+        return slow+1; //return the length from index 0->i which is i+1
     }
 }
 
