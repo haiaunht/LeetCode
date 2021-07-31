@@ -66,10 +66,10 @@ class Solution {
             int H2 = (minutes/60)%10;
             int M1 = (minutes%60)/10;
             int M2 = (minutes%60)%10;
-            if (!set.contains(H1) || !set.contains(H2) || !set.contains(M1) || !set.contains(M2)) {
-                continue;
+            if (set.contains(H1) && set.contains(H2) && set.contains(M1) && set.contains(M2)) {
+                 return H1 + "" + H2 + ":" + M1 + "" + M2;
             } else {
-                return H1 + "" + H2 + ":" + M1 + "" + M2;
+               continue;
             }
         }
     }
