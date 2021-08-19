@@ -70,7 +70,7 @@ class Solution {
             }
             result.append(sum % 10);
         }
-        //if we are done and carry still = 1, add 
+        //if we are done and carry still = 1, add
         if (carry == 1) result.append(carry);
         return result.reverse().toString();
     }
