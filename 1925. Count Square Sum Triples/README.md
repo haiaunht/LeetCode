@@ -36,9 +36,9 @@
 
 ```java
 // OJ: https://leetcode.com/problems/count-square-sum-triples/
-// Author: Please set your name in options page
-// Time: O()
-// Space: O()
+// Author: Hai-Au
+// Time: O(n*n)
+// Space: O(1)
 class Solution {
     public int countTriples(int n) {
         int count = 0;
