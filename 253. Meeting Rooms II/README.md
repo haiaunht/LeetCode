@@ -35,9 +35,9 @@
 
 ```java
 // OJ: https://leetcode.com/problems/meeting-rooms-ii/
-// Author: Please set your name in options page
-// Time: O()
-// Space: O()
+// Author: Hai-Au
+// Time: O(n)
+// Space: O(n)
 class Solution {
     public int minMeetingRooms(int[][] intervals) {
         int count = 0;
