@@ -47,8 +47,8 @@
 ```java
 // OJ: https://leetcode.com/problems/bus-routes/
 // Author: Please set your name in options page
-// Time: O()
-// Space: O()
+// Time: O(bus*bus)
+// Space: O(bus*bus + sum of stops)
 class Solution {
     public int numBusesToDestination(int[][] routes, int source, int target) {
         if (source == target) return 0;
