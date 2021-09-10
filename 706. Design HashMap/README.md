@@ -62,7 +62,7 @@ class MyHashMap {
     int[] hashMap; // 0 <= key, value <= 10^6 so it will be int[1000000]
     /** Initialize your data structure here. */
     public MyHashMap() {
-        hashMap = new int[1000000];
+        hashMap = new int[1000001];
         //if the key not found return -1 therefore fill hashmap with -1
         Arrays.fill(hashMap, -1);
     }
