@@ -51,31 +51,18 @@ We only want the closest k = 1 points from the origin, so the answer is just [[-
 ```JAVA
 // OJ: https://leetcode.com/problems/k-closest-points-to-origin/
 // Author: Please set your name in options page
-// Time: O()
-// Space: O()
+// Time: O(NlogN)
+// Space: O(N)
 class Solution {
     public int[][] kClosest(int[][] points, int k) {
-        int n = points.length;
-        int[] distances = new int[n];
-        //calculate distance for each points
-        for (int i=0; i<n; i++) {
-            int x = points[i][0];
-            int y = points[i][1];
-            int dis = (x*x + y*y);
-            distances[i] = dis;
+        PriorityQueue<int[]> minHeap = new PriorityQueue<int[]>((a,b)-> a[0]*a[0] + a[1]*a[1] - b[0]*b[0] - b[1]*b[1] );
+        for (int[] point : points) {
+            minHeap.add(point);
         }
-        //how to sort distances and keep track of its points???        
-        Integer[] orderByDistance = new Integer[n];
-        for (int i=0; i<n; i++) {
-            orderByDistance[i] = i;
-        }
-        //now sort the number in orderByDistance by caomparing value in distance
-        Arrays.sort(orderByDistance, (a,b) -> Integer.compare(distances[a], distances[b]));
-        //now from 0->k-1, retreive the order in orderByDistance and its values in points[][]
         int[][] result = new int[k][2];
+        int count = 0;
         for (int i=0; i<k; i++) {
-            //get orderByDistance value from 0-k-1 
-            result[i] = points[orderByDistance[i]];
+            result[count++] = minHeap.poll();
         }
         return result;
     }
